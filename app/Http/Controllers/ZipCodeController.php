@@ -20,6 +20,9 @@ class ZipCodeController extends Controller
      */
     public function save(Request $request)
     {
+        ini_set('memory_limit', '768M');
+        ini_set('max_execution_time', 300); //300 seconds = 5 minutes
+
         /**
          * El parametro entra en un switch case para verificar que la entrada de la request
          * es valida y es un archivo valido, de lo contrario notifica un error y señala las opciones disponibles.
