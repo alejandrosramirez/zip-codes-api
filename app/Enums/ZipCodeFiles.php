@@ -4,9 +4,13 @@ namespace App\Enums;
 
 enum ZipCodeFiles: string
 {
-    case AGS_CHIH = 'ags-chih';
-    case DF_MICH = 'df-mich';
-    case MOR_SLP = 'mor-slp';
-    case SIN_ZAC = 'sin-zac';
+    case a = 'a';
+    case b = 'b';
+    case c = 'c';
+    case d = 'd';
+    case e = 'e';
+    case f = 'f';
+    case g = 'g';
+    case h = 'h';
 
 }

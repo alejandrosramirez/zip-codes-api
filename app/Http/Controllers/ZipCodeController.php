@@ -10,9 +10,6 @@ use Illuminate\Validation\Rules\Enum;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpSpreadsheet\Writer\Exception;
 
-ini_set('memory_limit', '768M');
-ini_set('max_execution_time', 300); //300 seconds = 5 minutes
-
 class ZipCodeController extends Controller
 {
     /**
@@ -23,7 +20,6 @@ class ZipCodeController extends Controller
      */
     public function save(Request $request)
     {
-
         /**
          * El parametro entra en un switch case para verificar que la entrada de la request
          * es valida y es un archivo valido, de lo contrario notifica un error y señala las opciones disponibles.
@@ -33,18 +29,26 @@ class ZipCodeController extends Controller
          * Nota: Solo se especifican las opciones disponibles sin la extensión .xls
          */
         switch ($request->input('zip_code_file')) {
-            case ZipCodeFiles::AGS_CHIH->value:
+            case ZipCodeFiles::a->value:
                 break;
-            case ZipCodeFiles::DF_MICH->value:
+            case ZipCodeFiles::b->value:
                 break;
-            case ZipCodeFiles::MOR_SLP->value:
+            case ZipCodeFiles::c->value:
                 break;
-            case ZipCodeFiles::SIN_ZAC->value:
+            case ZipCodeFiles::d->value:
+                break;
+            case ZipCodeFiles::e->value:
+                break;
+            case ZipCodeFiles::f->value:
+                break;
+            case ZipCodeFiles::g->value:
+                break;
+            case ZipCodeFiles::h->value:
                 break;
             default:
                 $fileNames = '';
                 foreach (ZipCodeFiles::cases() as $case) {
-                    $fileNames .= $case->value . '.xls, ';
+                    $fileNames .= $case->value . ', ';
                 }
 
                 throw new Exception('El archivo ' . $request->input('zip_code_file') . '.xls no existe. Solo se admiten los siguientes archivos: ' . $fileNames);
