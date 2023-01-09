@@ -15,12 +15,12 @@ class ZipCodeController extends Controller
     /**
      * Display the specified zip code with addotional info.
      *
-     * @param  string  $zipCode
+     * @param  string  $zip_code
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
-    public function show(string $zipCode)
+    public function show(string $zip_code)
     {
-        $zipCodes = ZipCode::where('d_codigo', $zipCode)->get();
+        $zipCodes = ZipCode::where('d_codigo', $zip_code)->get();
 
         if ($zipCodes->count() > 0) {
             $firstRowData = $zipCodes->first();

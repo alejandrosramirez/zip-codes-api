@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('zip-codes')->controller(ZipCodeController::class)->group(function () {
-    Route::get('/{zipCode}', 'show');
+    Route::get('/{zip_code}', 'show');
 });
