@@ -10,6 +10,9 @@ use Illuminate\Validation\Rules\Enum;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpSpreadsheet\Writer\Exception;
 
+ini_set('memory_limit', '768M');
+ini_set('max_execution_time', 300); //300 seconds = 5 minutes
+
 class ZipCodeController extends Controller
 {
     /**
@@ -20,8 +23,6 @@ class ZipCodeController extends Controller
      */
     public function save(Request $request)
     {
-        ini_set('memory_limit', '768M');
-        ini_set('max_execution_time', 300); //300 seconds = 5 minutes
 
         /**
          * El parametro entra en un switch case para verificar que la entrada de la request
